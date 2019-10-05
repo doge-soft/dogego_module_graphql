@@ -6,10 +6,6 @@ import (
 )
 
 func GraphQLHandler(config *handler.Config) gin.HandlerFunc {
-	if gin.Mode() != gin.ReleaseMode {
-		config.Playground = true
-	}
-
 	h := handler.New(config)
 
 	return func(context *gin.Context) {
